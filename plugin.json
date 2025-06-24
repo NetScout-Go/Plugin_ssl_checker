@@ -1,43 +1,47 @@
 {
-  "id": "ssl_checker",
-  "name": "SSL/TLS Certificate Checker",
+  "author": "NetScout-Go",
   "description": "Validates SSL/TLS certificates of websites and displays expiration dates, chain validity, and security issues",
   "icon": "security",
+  "id": "ssl_checker",
+  "license": "MIT",
+  "name": "SSL/TLS Certificate Checker",
   "parameters": [
     {
+      "default": "example.com",
+      "description": "The hostname or domain to check (e.g., example.com)",
       "id": "hostname",
       "name": "Hostname",
-      "description": "The hostname or domain to check (e.g., example.com)",
-      "type": "string",
       "required": true,
-      "default": "example.com"
+      "type": "string"
     },
     {
-      "id": "port",
-      "name": "Port",
-      "description": "The port to connect to",
-      "type": "number",
-      "required": false,
       "default": 443,
-      "min": 1,
+      "description": "The port to connect to",
+      "id": "port",
       "max": 65535,
-      "step": 1
+      "min": 1,
+      "name": "Port",
+      "required": false,
+      "step": 1,
+      "type": "number"
     },
     {
+      "default": true,
+      "description": "Validate the entire certificate chain",
       "id": "check_chain",
       "name": "Check Certificate Chain",
-      "description": "Validate the entire certificate chain",
-      "type": "boolean",
       "required": false,
-      "default": true
+      "type": "boolean"
     },
     {
+      "default": true,
+      "description": "Show detailed certificate information",
       "id": "show_details",
       "name": "Show Certificate Details",
-      "description": "Show detailed certificate information",
-      "type": "boolean",
       "required": false,
-      "default": true
+      "type": "boolean"
     }
-  ]
+  ],
+  "repository": "https://github.com/NetScout-Go/Plugin_ssl_checker",
+  "version": "1.0.0"
 }
